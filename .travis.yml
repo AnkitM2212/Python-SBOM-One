@@ -22,7 +22,7 @@ jobs:
               - 'python/*.txt'
             token: $GHTOKEN
             on:
-              branch: main
+              branch: AnkitM2212-patch-deploy_1
       script:
         - cd python
         - python hello_world.py
@@ -48,7 +48,7 @@ jobs:
               - 'result_sbom/python/*.json'
             token: $GHTOKEN
             on:
-              branch: main
+              branch: AnkitM2212-patch-deploy_1
       script:
         - cd python
         - python hello_world.py
