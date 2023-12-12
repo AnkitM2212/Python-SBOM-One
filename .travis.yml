@@ -15,6 +15,7 @@ jobs:
           token: $GHTOKEN
           on:
             branch: AnkitM2212-patch-deploy_1
+            tags: true
       script:
         - cd python
         - python hello_world.py
@@ -33,6 +34,7 @@ jobs:
           token: $GHTOKEN
           on:
             branch: AnkitM2212-patch-deploy_1
+            tags: true
       script:
         - cd python
         - python hello_world.py
