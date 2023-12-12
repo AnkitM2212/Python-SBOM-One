@@ -5,24 +5,16 @@ jobs:
       dist: focal
       arch: amd64
       language: python
-      addons:
-        sbom:
+      deploy:
+        - provider: releases
+          edge: true
+          file_glob: true
+          file: 
+            - 'python/*.json'
+            - 'python/*.txt'
+          token: $GHTOKEN
           on:
-            branch: main
-          run_phase: before_script
-          input_dir: '/python'
-          output_dir: '/python'
-          output_format: spdx-json
-        deploy:
-          - provider: releases
-            edge: true
-            file_glob: true
-            file: 
-              - 'python/*.json'
-              - 'python/*.txt'
-            token: $GHTOKEN
-            on:
-              branch: AnkitM2212-patch-deploy_1
+            branch: AnkitM2212-patch-deploy_1
       script:
         - cd python
         - python hello_world.py
@@ -32,23 +24,15 @@ jobs:
       dist: focal
       arch: amd64
       language: python
-      addons:
-        sbom:
+      deploy:
+        - provider: releases
+          edge: true
+          file_glob: true
+          file: 
+            - 'result_sbom/python/*.json'
+          token: $GHTOKEN
           on:
-            branch: main
-          run_phase: before_script
-          input_dir: '/python'
-          output_dir: '/python/result_sbom'
-          output_format: spdx-json
-        deploy:
-          - provider: releases
-            edge: true
-            file_glob: true
-            file: 
-              - 'result_sbom/python/*.json'
-            token: $GHTOKEN
-            on:
-              branch: AnkitM2212-patch-deploy_1
+            branch: AnkitM2212-patch-deploy_1
       script:
         - cd python
         - python hello_world.py
